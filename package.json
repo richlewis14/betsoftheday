@@ -2,12 +2,15 @@
   "name": "botd",
   "version": "1.0.0",
   "description": "App that uses Twitter api to get hashtag of specified users",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Richard Lewis",
   "license": "ISC",
+  "engines": {
+    "node": "8.1.4"
+  },
   "dependencies": {
     "dotenv": "^5.0.1",
     "ejs": "^2.5.7",
