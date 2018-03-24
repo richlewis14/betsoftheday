@@ -11,7 +11,7 @@ if(process.env.NODE_ENV == 'production') {
 
 var port = process.env.PORT || 3000;
 
-var profiles = ['InplayMan', "KBtips_", "BristolTipster"]
+var profiles = ['InplayMan', "KBtips_", "BristolTipster", "BengalsTips"]
 var tweets_array = [];
 
 async function getBOTD(){
