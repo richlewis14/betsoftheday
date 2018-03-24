@@ -3,6 +3,7 @@ var app = express();
 // redis
 var redis = require('redis');
 var client = redis.createClient();
+var port = process.env.PORT || 3000;
 
 var profiles = ['InplayMan', "KBtips_"]
 var tweets_array = [];
@@ -39,6 +40,6 @@ app.get('/', async function (req, res) {
   res.render('home', { tweets: tweets });
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(port, function () {
+  console.log('Example app listening on port ' + port);
 });
