@@ -2,7 +2,13 @@ var express = require('express');
 var app = express();
 // redis
 var redis = require('redis');
-var client = redis.createClient();
+
+if(process.env.NODE_ENV == 'production') {
+  var client = redis.createClient(process.env.REDISCLOUD_URL);
+} else {
+  var client = redis.createClient();
+}
+
 var port = process.env.PORT || 3000;
 
 var profiles = ['InplayMan', "KBtips_"]
@@ -41,5 +47,5 @@ app.get('/', async function (req, res) {
 });
 
 app.listen(port, function () {
-  console.log('Example app listening on port ' + port);
+  console.log('Bets of the day listening on port ' + port);
 });
