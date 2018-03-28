@@ -13,7 +13,7 @@ var port = process.env.PORT || 4000;
 
 var profiles = ['InplayMan', "KBtips_", "WhaleBets_com", "TheWiseGuyTips", "longshotaccaman",
                 "garydoc777", "Rolland_Chaser", "XV_Betting", "BristolTipster", "BengalsTips",
-                "simplebetting01", "KKTipster"]
+                "simplebetting01", "KKTipster", "PGFootyTips"]
 
 var tweets_array = [];
 
