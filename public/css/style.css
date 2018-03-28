@@ -14,6 +14,10 @@ ul {
   list-style-type: none;
 }
 
+.media_url {
+  max-width: 100%;
+}
+
 .bubble {
   white-space: pre-line;
   width: 100%;
