@@ -29,8 +29,10 @@
             <div class="bubble">
               <h3><a href="https://twitter.com/<%= tweet.screen_name %>" target="_blank">@<%= tweet.screen_name %></a></h3><br/>
                 <%= tweet.tweet_text %>
+                <%if (tweet.media_url) { %>
+                  <img class="media_url" src="<%= tweet.media_url %>"</img>
+                <% } %>
             </div>
-
             <div class="arrow"></div>
           </div>
         </li>
