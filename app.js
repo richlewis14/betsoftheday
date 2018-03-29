@@ -10,9 +10,9 @@ if(process.env.NODE_ENV == 'production') {
 }
 
 var port = process.env.PORT || 4000;
-
-var profiles = ['InplayMan', "KBtips_", "WhaleBets_com", "TheWiseGuyTips", "longshotaccaman",
-                "garydoc777", "Rolland_Chaser", "XV_Betting", "BristolTipster", "BengalsTips",
+// TheWiseGuyTips, BristolTipster
+var profiles = ['InplayMan', "KBtips_", "WhaleBets_com", "ProSports_Tips", "longshotaccaman",
+                "garydoc777", "Rolland_Chaser", "XV_Betting", "BengalsTips",
                 "simplebetting01", "KKTipster", "PGFootyTips", "DIGtipping", "AceCornertips"]
 
 var tweets_array = [];
