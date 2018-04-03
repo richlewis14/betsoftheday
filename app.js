@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var moment = require('moment');
 // redis
 var redis = require('redis');
 
@@ -10,19 +11,26 @@ if(process.env.NODE_ENV == 'production') {
 }
 
 var port = process.env.PORT || 4000;
-// TheWiseGuyTips, BristolTipster
+
 var profiles = ['InplayMan', "KBtips_", "WhaleBets_com", "ProSports_Tips", "longshotaccaman",
                 "garydoc777", "Rolland_Chaser", "XV_Betting", "BengalsTips",
-                "simplebetting01", "KKTipster", "PGFootyTips", "DIGtipping", "AceCornertips"]
+                "simplebetting01", "KKTipster", "PGFootyTips", "DIGtipping", "AceCornertips",
+                "TheWiseGuyTips", "BristolTipster"]
 
 var tweets_array = [];
 
 async function getBOTD(){
   // empty tweets array as on a page refresh content would double each time
   tweets_array = [];
+  var today = moment().format('MMMM Do YYYY');
+
   for (var i = 0; i < profiles.length; i++) {
     var tweet_info = await readFromRedis(profiles[i]);
-    tweets_array.push(tweet_info);
+    var formatted_tweet_date = moment(Date.parse(tweet_info.created_at)).format('MMMM Do YYYY');
+    // Only show tweets for today
+    if(formatted_tweet_date == today){
+      tweets_array.push(tweet_info);
+    }
   }
 }
 
